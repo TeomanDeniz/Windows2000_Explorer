@@ -1,0 +1,48 @@
+<!--════════════════════════════════════╦═════════════════════════════╗
+║ HTA - HTA_EXPLORER [IE 9+]            ║       Maximum Tension       ║
+╠═══════════════════════════════════════╬═════════════════════════════╣
+║                                       │      ▄▄▄            ▄▄▄     ║
+║ Teoman Deniz                          │  ░    ░▒▓▒▄▄    ▄▄▒▓▒░    ░ ║
+║ maximum-tension.com                   │  ░░                      ░░ ║
+║                                       │  ░▒░    ░ ░░ ░ ░  ░  ░░░░▒░ ║
+║ ╔───┬──────────────────╗              │   ░▒░░ ░▒░▒▓░▒░▒░░▓░░░▒▒▒░  ║
+║ │ © │ Maximum Tension  │              │   ░░▒░░▒▒▓██▓█▓█▒░▒▓▓▒▒░░   ║
+║ ├───┴─────┬────────────┤ ┌────────────┤   ░▒▓▒▒▓▓██████████▓▓▒▒░    ║
+║ │ License │ MIT        │ │ 2022/11/15 │    ░░░░▒▒▒▓▒▒▓▒▒▒▓▒▒▒░░     ║
+║ ╚─────────┴────────────╝ │ YYYY/MM/DD │       ░░░░▒░░▒░░░▒░░░░      ║
+╚══════════════════════════╩════════════╩═══════════════════════════-->
+
+<HTML ONKEYUP="MT_EXPLORER_CHECK_KEY()">
+ <HEAD>
+  <HTA:APPLICATION
+   ID="HTA"
+   BORDERSTYLE="NORMAL"
+   CAPTION="YES"
+   CONTEXTMENU="NO"
+   ICON="winhlp32.exe"
+   NAVIGABLE="TRUE"
+   SCROLL="NO"
+   SCROLLFLAT="NO"
+   SELECTION="NO" 
+   SHOWINTASKBAR="YES"
+   SINGLEINSTANCE="YES"
+   SYSMENU="YES"
+   VERSION="10.11.10.01"
+   >
+  <TITLE>HTA EXPLORER</TITLE>
+  <META HTTP-EQUIV="X-UA-COMPATIBLE" CONTENT="IE=9"/>
+  <LINK REL="STYLESHEET" HREF="DATA_HTA/SCRIPTS/STYLE.CSS">
+  <SCRIPT LANGUAGE="VBScript" SRC="DATA_HTA/SCRIPTS/SCRIPT.VBS"></SCRIPT>
+ </HEAD>
+ <BODY>
+  <MT_EXPLORER>
+   <EXPLORER_PATH ID="EXPLORER_PATH" VALUE="0"></EXPLORER_PATH>
+   <EXPLORER_INDEX ID="EXPLORER_INDEX" VALUE="1"></EXPLORER_INDEX>
+   <DIV ID="MT_EXPLORER_BACK" ONCLICK="MT_EXPLORER_BACK_DIRECTORY()">Back</DIV>
+   <DIV ID="MT_EXPLORER_BACK_NOT">Back</DIV>
+   <DIV ID="MT_EXPLORER">
+    <!--FOLDER/FILE OBJECTS FILLING IN HERE-->
+   </DIV>
+  </MT_EXPLORER>
+ </BODY>
+</HTML>
