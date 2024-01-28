@@ -1,149 +1,282 @@
-/*══════════════════════════════════════╦═════════════════════════════╗
-║ CSS - HTA_EXPLORER [IE 9+]            ║       Maximum Tension       ║
-╠═══════════════════════════════════════╬═════════════════════════════╣
-║                                       │      ▄▄▄            ▄▄▄     ║
-║ Teoman Deniz                          │  ░    ░▒▓▒▄▄    ▄▄▒▓▒░    ░ ║
-║ maximum-tension.com                   │  ░░                      ░░ ║
-║                                       │  ░▒░    ░ ░░ ░ ░  ░  ░░░░▒░ ║
-║ ╔───┬──────────────────╗              │   ░▒░░ ░▒░▒▓░▒░▒░░▓░░░▒▒▒░  ║
-║ │ © │ Maximum Tension  │              │   ░░▒░░▒▒▓██▓█▓█▒░▒▓▓▒▒░░   ║
-║ ├───┴─────┬────────────┤ ┌────────────┤   ░▒▓▒▒▓▓██████████▓▓▒▒░    ║
-║ │ License │ MIT        │ │ 2022/11/19 │    ░░░░▒▒▒▓▒▒▓▒▒▒▓▒▒▒░░     ║
-║ ╚─────────┴────────────╝ │ YYYY/MM/DD │       ░░░░▒░░▒░░░▒░░░░      ║
-╚══════════════════════════╩════════════╩════════════════════════════*/
+/******************************************************************************\
+# CSS - HTA_EXPLORER [IE 9+]                     #       Maximum Tension       #
+################################################################################
+#                                                #      -__            __-     #
+# Teoman Deniz                                   #  :    :!1!-_    _-!1!:    : #
+# maximum-tension.com                            #  ::                      :: #
+#                                                #  :!:    : :: : :  :  ::::!: #
+# +.....................++.....................+ #   :!:: :!:!1:!:!::1:::!!!:  #
+# : C - Maximum Tension :: Create - 2023/05/24 : #   ::!::!!1001010!:!11!!::   #
+# :---------------------::---------------------: #   :!1!!11000000000011!!:    #
+# : License - MIT       :: Update - 2024/01/28 : #    ::::!!!1!!1!!!1!!!::     #
+# +.....................++.....................+ #       ::::!::!:::!::::      #
+\******************************************************************************/
 
-/*════════════════════════════════════════╗
-║          MT_EXPLORER CONTAINER          ║
-╠═════════════════════════════════════════╣
-│*/MT_EXPLORER                          /*│
-│*/{                                    /*│
-│*/ BORDER:             #000 SOLID 1PX; /*│
-│*/ BACKGROUND-COLOR:             #FFF; /*│
-│*/}                                    /*│
-├─────────────────────────────────────────┤
-│*/#MT_EXPLORER                         /*│
-│*/{                                    /*│
-│*/ FONT-FAMILY: MS PGothic !IMPORTANT; /*│
-│*/ FONT-SIZE:                    12PX; /*│
-│*/ DISPLAY:                      FLEX; /*│
-│*/ FLEX-WRAP:                    WRAP; /*│
-│*/ BORDER:             #000 SOLID 1PX; /*│
-│*/}                                    /*│
-╚════════════════════════════════════════*/
+BODY, HTML
+{
+	WIDTH: 100%;
+	HEIGHT: 100%;
+	PADDING: 0;
+	MARGIN: 0;
+}
 
-/*══════════════════════════════════════════════════════════╗
-║                  MT_EXPLORER FOLDERS/FILES                ║
-╠═══════════════════════════════════════════════════════════╣
-│*/.EXPLORER_ENTITY_HITBOX                                /*│
-│*/{                                                      /*│
-│*/ WIDTH:                                          70PX; /*│
-│*/ HEIGHT:                                         68PX; /*│
-│*/ PADDING-RIGHT:                                   4PX; /*│
-│*/ PADDING:                                       0 1PX; /*│
-│*/ MARGIN-RIGHT:                                    4PX; /*│
-│*/ MARGIN-BOTTOM:                                   1PX; /*│
-│*/ FLOAT:                                          LEFT; /*│
-│*/}                                                      /*│
-├───────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE, .EXPLORER_FOLDER                       /*│
-│*/{                                                      /*│
-│*/ POINTER-EVENTS:                                 AUTO; /*│
-│*/ POSITION:                                   RELATIVE; /*│
-│*/ WIDTH:                                          100%; /*│
-│*/ BORDER:                        1PX SOLID TRANSPARENT; /*│
-│*/ BACKGROUND-REPEAT:                         NO-REPEAT; /*│
-│*/ BACKGROUND-POSITION:                      CENTER 2PX; /*│
-│*/ Z-INDEX:                                           1; /*│
-│*/}                                                      /*│
-├───────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE:HOVER, .EXPLORER_FOLDER:HOVER           /*│
-│*/{                                                      /*│
-│*/ BACKGROUND-COLOR:                               #555; /*│
-│*/ BORDER:                               1PX SOLID #448; /*│
-│*/}                                                      /*│
-├───────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE:FOCUS, .EXPLORER_FOLDER:FOCUS           /*│
-│*/{                                                      /*│
-│*/ BACKGROUND-COLOR:                               #55A; /*│
-│*/ BORDER:                               1PX SOLID #33A; /*│
-│*/ Z-INDEX:                                           2; /*│
-│*/}                                                      /*│
-├───────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE SPAN, .EXPLORER_FOLDER SPAN             /*│
-│*/{                                                      /*│
-│*/ POSITION:                                   RELATIVE; /*│
-│*/ TEXT-ALIGN:                                   CENTER; /*│
-│*/ MARGIN-TOP:                                     52PX; /*│
-│*/ WIDTH:                                          65PX; /*│
-│*/ DISPLAY:                                INLINE-BLOCK; /*│
-│*/ MARGIN-LEFT:                                     50%; /*│
-│*/ TRANSFORM:                          TRANSLATEX(-50%); /*│
-│*/ WHITE-SPACE:                                  NOWRAP; /*│
-│*/ WORD-BREAK:                               BREAK-WORD; /*│
-│*/ OVERFLOW:                                     HIDDEN; /*│
-│*/ TEXT-OVERFLOW:                              ELLIPSIS; /*│
-│*/}                                                      /*│
-├───────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE:FOCUS SPAN, .EXPLORER_FOLDER:FOCUS SPAN /*│
-│*/{                                                      /*│
-│*/ WORD-BREAK:                                BREAK-ALL; /*│
-│*/ OVERFLOW:                                    VISIBLE; /*│
-│*/ WHITE-SPACE:                                  NORMAL; /*│
-│*/}                                                      /*│
-╠═══════════════════════════════════════════════════════════╣
-║                  MT_EXPLORER FOLDERS/FILES                ║
-╚══════════════════════════════════════════════════════════*/
+@FONT-FACE
+{
+	FONT-FAMILY: 'W95FA';
+	SRC: LOCAL("W95FA"), URL('../FONTS/W95FA.woff') FORMAT('woff');
+}
 
-/*════════════════════════════════════════════════════════════════════════╗
-║                          MT_EXPLORER FILE ICONS                         ║
-╠═════════════════════════════════════════════════════════════════════════╣
-│*/.EXPLORER_FOLDER                                                     /*├─[*\]
-│*/{BACKGROUND-IMAGE:                      URL("../IMAGES/FOLDER.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE                                                       /*├─[*.*]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/FILE.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".hta"], .EXPLORER_FILE[FILE_ICON$=".HTA"] /*├─[*.HTA]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.HTA.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".png"], .EXPLORER_FILE[FILE_ICON$=".PNG"] /*├─[*.PNG]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.PNG.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".ico"], .EXPLORER_FILE[FILE_ICON$=".ICO"] /*├─[*.ICO]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.ICO.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".txt"], .EXPLORER_FILE[FILE_ICON$=".TXT"] /*├─[*.TXT]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.TXT.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".ini"], .EXPLORER_FILE[FILE_ICON$=".INI"] /*├─[*.INI]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.INI.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".exe"], .EXPLORER_FILE[FILE_ICON$=".EXE"] /*├─[*.EXE]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.EXE.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".bat"], .EXPLORER_FILE[FILE_ICON$=".BAT"] /*├─[*.BAT]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.BAT.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".vbs"], .EXPLORER_FILE[FILE_ICON$=".VBS"] /*├─[*.VBS]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.VBS.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".css"], .EXPLORER_FILE[FILE_ICON$=".CSS"] /*├─[*.CSS]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.CSS.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".js"], .EXPLORER_FILE[FILE_ICON$=".JS"]   /*├─[*.JS]
-│*/{BACKGROUND-IMAGE:                         URL("../IMAGES/.JS.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".c"], .EXPLORER_FILE[FILE_ICON$=".C"]     /*├─[*.C]
-│*/{BACKGROUND-IMAGE:                          URL("../IMAGES/.C.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".h"], .EXPLORER_FILE[FILE_ICON$=".H"]     /*├─[*.H]
-│*/{BACKGROUND-IMAGE:                          URL("../IMAGES/.H.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".mp3"], .EXPLORER_FILE[FILE_ICON$=".MP3"] /*├─[*.MP3]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.MP3.PNG")} /*│
-├─────────────────────────────────────────────────────────────────────────┤
-│*/.EXPLORER_FILE[FILE_ICON$=".wav"], .EXPLORER_FILE[FILE_ICON$=".WAV"] /*├─[*.WAV]
-│*/{BACKGROUND-IMAGE:                        URL("../IMAGES/.WAV.PNG")} /*│
-╠═════════════════════════════════════════════════════════════════════════╣
-║                          MT_EXPLORER FILE ICONS                         ║
-╚════════════════════════════════════════════════════════════════════════*/
+#___EXPLORER___,
+.WINDOW2000-WINDOW
+{
+	FONT-FAMILY: W95FA !IMPORTANT;
+	FONT-SIZE: 12PX;
+	/*FONT-FAMILY: MS PGothic !IMPORTANT;*/
+}
+
+.WINDOW2000-WINDOW
+{
+	HEIGHT: 100%;
+	WIDTH: 100%;
+	POSITION: RELATIVE;
+	BOX-SIZING: BORDER-BOX;
+	PADDING-BOTTOM: 22PX;
+}
+
+.WINDOW2000-BORDER
+{
+	BORDER: 2PX SOLID #CCC;
+	BOX-SIZING: BORDER-BOX;
+	WIDTH: 100%;
+}
+
+.WINDOW2000-TITLEBAR
+{
+	COLOR: #FFF;
+	BACKGROUND: #00E;
+	PADDING: 2PX 2PX 0 3PX;
+	HEIGHT: 16PX;
+}
+
+.WINDOW2000-TITLEBAR,
+.WINDOW2000-TITLEBAR *
+{
+	CURSOR: DEFAULT;
+}
+
+.WINDOW2000-TITLEBAR::SELECTION,
+.WINDOW2000-TITLEBAR *::SELECTION
+{
+	CURSOR: DEFAULT;
+	BACKGROUND-COLOR: TRANSPARENT;
+}
+
+.WINDOW2000-TITLEBAR IMG
+{
+	MARGIN-RIGHT: 20PX;
+}
+
+.WINDOW2000-CLOSE-BUTTON
+{
+	BACKGROUND-IMAGE: URL("../IMAGES/CLOSE.png");
+	MARGIN-LEFT: 3PX;
+}
+
+.WINDOW2000-MINIMIZE-BUTTON
+{
+	BACKGROUND-IMAGE: URL("../IMAGES/MINIMIZE.png");
+}
+
+.WINDOW2000-CLOSE-BUTTON,
+.WINDOW2000-MINIMIZE-BUTTON
+{
+	BACKGROUND-REPEAT: NO-REPEAT;
+	/*     12      X     10 */
+	WIDTH: 12PX; HEIGHT: 10PX;
+	FLOAT: RIGHT;
+	CURSOR: POINTER;
+	CURSOR: HAND;
+}
+
+.WINDOW2000-CLOSE-BUTTON,
+.WINDOW2000-MINIMIZE-BUTTON,
+.WINDOW2000-WINDOW
+{
+	BORDER-TOP: 2PX OUTSET #EFEFEF;
+	BORDER-LEFT: 2PX OUTSET #EFEFEF;
+	BORDER-RIGHT: 2PX OUTSET #000;
+	BORDER-BOTTOM: 2PX OUTSET #000;
+}
+
+.WINDOW2000-CLOSE-BUTTON:ACTIVE,
+.WINDOW2000-INNER
+{
+	BORDER-TOP: 2PX OUTSET #000;
+	BORDER-LEFT: 2PX OUTSET #000;
+	BORDER-RIGHT: 2PX OUTSET #EFEFEF;
+	BORDER-BOTTOM: 2PX OUTSET #EFEFEF; 
+}
+
+.WINDOW2000-INNER
+{
+	BACKGROUND-COLOR: #FFF;
+	COLOR: #000;
+	PADDING: 2PX 1PX 0 3PX;
+	/*WHITE-SPACE: PRE-WRAP;*/
+	OVERFLOW-Y: SCROLL;
+	OVERFLOW-X: HIDDEN;
+	scrollbar-face-color: #CCC;
+	scrollbar-arrow-color: #000;
+	scrollbar-track-color: #CCC;
+	WIDTH: 100%;
+	HEIGHT: 100%;
+	BOX-SIZING: BORDER-BOX;
+}
+
+EXPLORER
+{
+	POSITION: RELATIVE;
+	BACKGROUND-COLOR: #FFF;
+	DISPLAY: BLOCK;
+}
+
+#___EXPLORER___
+{
+	POSITION: RELATIVE;
+	FONT-SIZE: 12PX;
+	DISPLAY: FLEX;
+	FLEX-WRAP: WRAP;
+}
+
+.EXPLORER_ENTITY_HITBOX
+{
+	WIDTH: 70PX;
+	HEIGHT: 68PX;
+	PADDING-RIGHT: 4PX;
+	PADDING: 0 1PX;
+	MARGIN-RIGHT: 4PX;
+	MARGIN-BOTTOM: 1PX;
+	FLOAT: LEFT;
+}
+
+.EXPLORER_FILE, .EXPLORER_FOLDER
+{
+	POINTER-EVENTS: AUTO;
+	POSITION: RELATIVE;
+	WIDTH: 100%;
+	BORDER: 1PX SOLID TRANSPARENT;
+	BACKGROUND-REPEAT: NO-REPEAT;
+	BACKGROUND-POSITION: CENTER 2PX;
+	BACKGROUND-SIZE: 48PX 48PX;
+	Z-INDEX: 1;
+}
+
+.EXPLORER_FILE:HOVER,
+.EXPLORER_FOLDER:HOVER
+{
+	BACKGROUND-COLOR: #DDD;
+}
+
+.EXPLORER_FILE:FOCUS,
+.EXPLORER_FOLDER:FOCUS
+{
+	BACKGROUND-COLOR: #55A;
+	COLOR: #FFF;
+	Z-INDEX: 2;
+}
+
+.EXPLORER_FILE SPAN,
+.EXPLORER_FOLDER SPAN
+{
+	POSITION: RELATIVE;
+	TEXT-ALIGN: CENTER;
+	MARGIN-TOP: 52PX;
+	WIDTH: 65PX;
+	DISPLAY: INLINE-BLOCK;
+	MARGIN-LEFT: 50%;
+	TRANSFORM: TRANSLATEX(-50%);
+	WHITE-SPACE: NOWRAP;
+	WORD-BREAK: BREAK-WORD;
+	OVERFLOW: HIDDEN;
+	TEXT-OVERFLOW: ELLIPSIS;
+}
+
+.EXPLORER_FILE:FOCUS SPAN,
+.EXPLORER_FOLDER:FOCUS SPAN
+{
+	WORD-BREAK: BREAK-ALL;
+	OVERFLOW: VISIBLE;
+	WHITE-SPACE: NORMAL;
+	BORDER: 0;
+}
+
+#EXPLORER_BACK_NOT
+{
+	WIDTH: 12PX;
+	HEIGHT: 10PX;
+	BACKGROUND-IMAGE: URL("../IMAGES/EXPLORER_BACK[EOD].png");
+}
+
+#EXPLORER_BACK
+{
+	WIDTH: 12PX;
+	HEIGHT: 10PX;
+	BACKGROUND-IMAGE: URL("../IMAGES/EXPLORER_BACK[IDLE].png");
+}
+
+#EXPLORER_BACK:HOVER
+{
+	BACKGROUND-IMAGE: URL("../IMAGES/EXPLORER_BACK[HOVER].png");
+}
+
+.EXPLORER_FOLDER
+{
+	BACKGROUND-IMAGE: URL("../IMAGES/FOLDER.PNG");
+}
+
+.EXPLORER_FILE
+{
+	BACKGROUND-IMAGE: URL("../IMAGES/FILE.PNG");
+}
+
+.EXPLORER_FILE[FILE_ICON$=".hta"], .EXPLORER_FILE[FILE_ICON$=".HTA"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.HTA.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".png"], .EXPLORER_FILE[FILE_ICON$=".PNG"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.PNG.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".ico"], .EXPLORER_FILE[FILE_ICON$=".ICO"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.ICO.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".txt"], .EXPLORER_FILE[FILE_ICON$=".TXT"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.TXT.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".ini"], .EXPLORER_FILE[FILE_ICON$=".INI"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.INI.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".exe"], .EXPLORER_FILE[FILE_ICON$=".EXE"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.EXE.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".bat"], .EXPLORER_FILE[FILE_ICON$=".BAT"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.BAT.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".vbs"], .EXPLORER_FILE[FILE_ICON$=".VBS"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.VBS.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".css"], .EXPLORER_FILE[FILE_ICON$=".CSS"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.CSS.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".js"], .EXPLORER_FILE[FILE_ICON$=".JS"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.JS.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".c"], .EXPLORER_FILE[FILE_ICON$=".C"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.C.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".h"], .EXPLORER_FILE[FILE_ICON$=".H"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.H.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".mp3"], .EXPLORER_FILE[FILE_ICON$=".MP3"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.MP3.PNG")}
+
+.EXPLORER_FILE[FILE_ICON$=".wav"], .EXPLORER_FILE[FILE_ICON$=".WAV"]
+{BACKGROUND-IMAGE: URL("../IMAGES/.WAV.PNG")}

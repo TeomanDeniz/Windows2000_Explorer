@@ -1,48 +1,87 @@
-<!--════════════════════════════════════╦═════════════════════════════╗
-║ HTA - HTA_EXPLORER [IE 9+]            ║       Maximum Tension       ║
-╠═══════════════════════════════════════╬═════════════════════════════╣
-║                                       │      ▄▄▄            ▄▄▄     ║
-║ Teoman Deniz                          │  ░    ░▒▓▒▄▄    ▄▄▒▓▒░    ░ ║
-║ maximum-tension.com                   │  ░░                      ░░ ║
-║                                       │  ░▒░    ░ ░░ ░ ░  ░  ░░░░▒░ ║
-║ ╔───┬──────────────────╗              │   ░▒░░ ░▒░▒▓░▒░▒░░▓░░░▒▒▒░  ║
-║ │ © │ Maximum Tension  │              │   ░░▒░░▒▒▓██▓█▓█▒░▒▓▓▒▒░░   ║
-║ ├───┴─────┬────────────┤ ┌────────────┤   ░▒▓▒▒▓▓██████████▓▓▒▒░    ║
-║ │ License │ MIT        │ │ 2022/11/15 │    ░░░░▒▒▒▓▒▒▓▒▒▒▓▒▒▒░░     ║
-║ ╚─────────┴────────────╝ │ YYYY/MM/DD │       ░░░░▒░░▒░░░▒░░░░      ║
-╚══════════════════════════╩════════════╩═══════════════════════════-->
+<!--***************************************************************************\
+# HTA - HTA_EXPLORER [IE 9+]                     #       Maximum Tension       #
+################################################################################
+#                                                #      -__            __-     #
+# Teoman Deniz                                   #  :    :!1!-_    _-!1!:    : #
+# maximum-tension.com                            #  ::                      :: #
+#                                                #  :!:    : :: : :  :  ::::!: #
+# +.....................++.....................+ #   :!:: :!:!1:!:!::1:::!!!:  #
+# : C - Maximum Tension :: Create - 2022/11/15 : #   ::!::!!1001010!:!11!!::   #
+# :---------------------::---------------------: #   :!1!!11000000000011!!:    #
+# : License - MIT       :: Update - 2024/01/28 : #    ::::!!!1!!1!!!1!!!::     #
+# +.....................++.....................+ #       ::::!::!:::!::::      #
+<--**************************************************************************-->
 
-<HTML ONKEYUP="MT_EXPLORER_CHECK_KEY()">
+<!--ONKEYUP="EXPLORER_CHECK_KEY()"-->
+<HTML
+ ONKEYUP="EXPLORER_CHECK_KEY()"
+ ONMOUSEMOVE="VBScript:WINDOW_IS_MOVING()">
  <HEAD>
+  <META CHARSET="UTF-8">
+  <TITLE>EXPLORER</TITLE>
+  <META HTTP-EQUIV="x-ua-compatible" CONTENT="IE=9"/>
   <HTA:APPLICATION
-   ID="HTA"
-   BORDERSTYLE="NORMAL"
-   CAPTION="YES"
-   CONTEXTMENU="NO"
-   ICON="winhlp32.exe"
-   NAVIGABLE="TRUE"
-   SCROLL="NO"
-   SCROLLFLAT="NO"
-   SELECTION="NO" 
-   SHOWINTASKBAR="YES"
-   SINGLEINSTANCE="YES"
-   SYSMENU="YES"
-   VERSION="10.11.10.01"
-   >
-  <TITLE>HTA EXPLORER</TITLE>
-  <META HTTP-EQUIV="X-UA-COMPATIBLE" CONTENT="IE=9"/>
-  <LINK REL="STYLESHEET" HREF="DATA_HTA/SCRIPTS/STYLE.CSS">
+                ID = "EXPLORER"
+   APPLICATIONNAME = "EXPLORER"
+            BORDER = "NONE"
+       BORDERSTYLE = "NORMAL"
+           CAPTION = "NO"
+       CONTEXTMENU = "NO"
+              ICON = "DATA_HTA/IMAGES/ICONS/APP.ico"
+       INNERBORDER = "NO"
+    MAXIMIZEBUTTON = "NO"
+    MINIMIZEBUTTON = "NO"
+         NAVIGABLE = "TRUE"
+            SCROLL = "NO"
+        SCROLLFLAT = "NO"
+         SELECTION = "YES"
+     SHOWINTASKBAR = "YES"
+    SINGLEINSTANCE = "YES"
+           SYSMENU = "NO"
+           VERSION = "10.11.10.01"
+   ></HTA:APPLICATION>
+  <BGSOUND ID="BGSOUND0"><BGSOUND ID="BGSOUND1"><BGSOUND ID="BGSOUND2">
+  <BGSOUND ID="BGSOUND3"><BGSOUND ID="BGSOUND4"><BGSOUND ID="BGSOUND5">
+  <BGSOUND ID="BGSOUND6"><BGSOUND ID="BGSOUND7"><BGSOUND ID="BGSOUND8">
+  <BGSOUND ID="BGSOUND9">
+  <OBJECT
+   STYLE="DISPLAY: NONE;"
+   ID="HHCtrlMinimizeWindowObject"
+   CLASSID="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11">
+   <PARAM NAME="command" VALUE="minimize"/>
+  </OBJECT>
+  <SCRIPT LANGUAGE="JAVASCRIPT" SRC="DATA_HTA/SCRIPTS/SCRIPT.JS"></SCRIPT>
   <SCRIPT LANGUAGE="VBScript" SRC="DATA_HTA/SCRIPTS/SCRIPT.VBS"></SCRIPT>
+  <LINK REL="STYLESHEET" HREF="DATA_HTA/SCRIPTS/STYLE.CSS">
  </HEAD>
  <BODY>
-  <MT_EXPLORER>
-   <EXPLORER_PATH ID="EXPLORER_PATH" VALUE="0"></EXPLORER_PATH>
-   <EXPLORER_INDEX ID="EXPLORER_INDEX" VALUE="1"></EXPLORER_INDEX>
-   <DIV ID="MT_EXPLORER_BACK" ONCLICK="MT_EXPLORER_BACK_DIRECTORY()">Back</DIV>
-   <DIV ID="MT_EXPLORER_BACK_NOT">Back</DIV>
-   <DIV ID="MT_EXPLORER">
-    <!--FOLDER/FILE OBJECTS FILLING IN HERE-->
+  <DIV CLASS="WINDOW2000-WINDOW" STYLE="HEIGHT: 100%; WIDTH: 100%;">
+   <DIV CLASS="WINDOW2000-BORDER"
+    ONMOUSEDOWN="VBScript:SET_WINDOW_POSITION()"
+    ONMOUSEUP="VBScript:WINDOW_STOPPED_MOVING()">
+    <DIV CLASS="WINDOW2000-TITLEBAR">
+     <!--<IMG STYLE="POSITION: ABSOLUTE;" SRC="">-->
+     <SPAN ID="APP_TITLE"></SPAN>
+     <A CLASS="WINDOW2000-CLOSE-BUTTON" ONCLICK="self.close();"></A>
+     <A CLASS="WINDOW2000-MINIMIZE-BUTTON"
+      ONCLICK="javascript:MINIMALIZE_WINDOW();"></A>
+    </DIV>
    </DIV>
-  </MT_EXPLORER>
+   <DIV CLASS="WINDOW2000-BORDER" STYLE="HEIGHT: 100%;">
+    <DIV CLASS="WINDOW2000-INNER">
+     <EXPLORER>
+      <EXPLORER_PATH ID="EXPLORER_PATH" VALUE="0"></EXPLORER_PATH>
+      <EXPLORER_INDEX ID="EXPLORER_INDEX" VALUE="1"></EXPLORER_INDEX>
+      <DIV ID="EXPLORER_BACK"
+       ONCLICK='javascript:PLAY_SOUND("POPUPS/NAVIGATION.wav");
+       VBScript:EXPLORER_BACK_DIRECTORY()'></DIV>
+      <DIV ID="EXPLORER_BACK_NOT"></DIV>
+      <DIV ID="___EXPLORER___">
+       <!-- FOLDER/FILE OBJECTS FILLING IN HERE -->
+      </DIV>
+     </EXPLORER>
+    </DIV>
+   </DIV>
+  </DIV>
  </BODY>
 </HTML>
