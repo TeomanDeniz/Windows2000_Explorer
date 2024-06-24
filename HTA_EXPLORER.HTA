@@ -8,14 +8,15 @@
 # +.....................++.....................+ #   :!:: :!:!1:!:!::1:::!!!:  #
 # : C - Maximum Tension :: Create - 2022/11/15 : #   ::!::!!1001010!:!11!!::   #
 # :---------------------::---------------------: #   :!1!!11000000000011!!:    #
-# : License - MIT       :: Update - 2024/01/28 : #    ::::!!!1!!1!!!1!!!::     #
+# : License - MIT       :: Update - 2024/06/23 : #    ::::!!!1!!1!!!1!!!::     #
 # +.....................++.....................+ #       ::::!::!:::!::::      #
 <--**************************************************************************-->
 
 <!--ONKEYUP="EXPLORER_CHECK_KEY()"-->
 <HTML
  ONKEYUP="EXPLORER_CHECK_KEY()"
- ONMOUSEMOVE="VBScript:WINDOW_IS_MOVING()">
+ ONMOUSEMOVE="VBScript:WINDOW_IS_MOVING()"
+ CLASS="WINDOW_OBJECT">
  <HEAD>
   <META CHARSET="UTF-8">
   <TITLE>EXPLORER</TITLE>
@@ -34,7 +35,7 @@
          NAVIGABLE = "TRUE"
             SCROLL = "NO"
         SCROLLFLAT = "NO"
-         SELECTION = "YES"
+         SELECTION = "NO"
      SHOWINTASKBAR = "YES"
     SINGLEINSTANCE = "YES"
            SYSMENU = "NO"
@@ -55,6 +56,14 @@
   <LINK REL="STYLESHEET" HREF="DATA_HTA/SCRIPTS/STYLE.CSS">
  </HEAD>
  <BODY>
+  <DIV CLASS="WINDOW-RESIZE-HANDLE" ID="WINDOW-TOP-LEFT"></DIV>
+  <DIV CLASS="WINDOW-RESIZE-HANDLE" ID="WINDOW-TOP-RIGHT"></DIV>
+  <DIV CLASS="WINDOW-RESIZE-HANDLE" ID="WINDOW-BOTTOM-LEFT"></DIV>
+  <DIV CLASS="WINDOW-RESIZE-HANDLE" ID="WINDOW-BOTTOM-RIGHT"></DIV>
+  <DIV CLASS="WINDOW-RESIZE-HANDLE" ID="WINDOW-TOP"></DIV>
+  <DIV CLASS="WINDOW-RESIZE-HANDLE" ID="WINDOW-BOTTOM"></DIV>
+  <DIV CLASS="WINDOW-RESIZE-HANDLE" ID="WINDOW-LEFT"></DIV>
+  <DIV CLASS="WINDOW-RESIZE-HANDLE" ID="WINDOW-RIGHT"></DIV>
   <DIV CLASS="WINDOW2000-WINDOW" STYLE="HEIGHT: 100%; WIDTH: 100%;">
    <DIV CLASS="WINDOW2000-BORDER"
     ONMOUSEDOWN="VBScript:SET_WINDOW_POSITION()"

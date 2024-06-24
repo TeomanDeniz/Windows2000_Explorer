@@ -8,7 +8,7 @@
 # +.....................++.....................+ #   :!:: :!:!1:!:!::1:::!!!:  #
 # : C - Maximum Tension :: Create - 2023/05/24 : #   ::!::!!1001010!:!11!!::   #
 # :---------------------::---------------------: #   :!1!!11000000000011!!:    #
-# : License - MIT       :: Update - 2024/01/28 : #    ::::!!!1!!1!!!1!!!::     #
+# : License - MIT       :: Update - 2024/06/24 : #    ::::!!!1!!1!!!1!!!::     #
 # +.....................++.....................+ #       ::::!::!:::!::::      #
 \******************************************************************************/
 
@@ -18,6 +18,7 @@ BODY, HTML
 	HEIGHT: 100%;
 	PADDING: 0;
 	MARGIN: 0;
+	DISPLAY: BLOCK;
 }
 
 @FONT-FACE
@@ -38,24 +39,33 @@ BODY, HTML
 {
 	HEIGHT: 100%;
 	WIDTH: 100%;
-	POSITION: RELATIVE;
 	BOX-SIZING: BORDER-BOX;
 	PADDING-BOTTOM: 22PX;
+	POSITION: RELATIVE;
+	Z-INDEX: 1;
+	DISPLAY: BLOCK;
 }
 
 .WINDOW2000-BORDER
 {
-	BORDER: 2PX SOLID #CCC;
+	POINTER-EVENTS: NONE;
+	BORDER: 2PX SOLID #CCC; /* ##################################### */
 	BOX-SIZING: BORDER-BOX;
 	WIDTH: 100%;
+	POSITION: RELATIVE;
+	Z-INDEX: 1;
+	DISPLAY: BLOCK;
 }
 
 .WINDOW2000-TITLEBAR
 {
 	COLOR: #FFF;
 	BACKGROUND: #00E;
-	PADDING: 2PX 2PX 0 3PX;
+	PADDING: 2PX 2PX 0PX 3PX;
 	HEIGHT: 16PX;
+	POSITION: RELATIVE;
+	Z-INDEX: 1;
+	DISPLAY: BLOCK;
 }
 
 .WINDOW2000-TITLEBAR,
@@ -119,11 +129,12 @@ BODY, HTML
 
 .WINDOW2000-INNER
 {
+	POINTER-EVENTS: NONE;
 	BACKGROUND-COLOR: #FFF;
 	COLOR: #000;
 	PADDING: 2PX 1PX 0 3PX;
 	/*WHITE-SPACE: PRE-WRAP;*/
-	OVERFLOW-Y: SCROLL;
+	/*OVERFLOW-Y: SCROLL;*/
 	OVERFLOW-X: HIDDEN;
 	scrollbar-face-color: #CCC;
 	scrollbar-arrow-color: #000;
@@ -131,6 +142,9 @@ BODY, HTML
 	WIDTH: 100%;
 	HEIGHT: 100%;
 	BOX-SIZING: BORDER-BOX;
+	POSITION: RELATIVE;
+	Z-INDEX: 1;
+	DISPLAY: BLOCK;
 }
 
 EXPLORER
@@ -280,3 +294,78 @@ EXPLORER
 
 .EXPLORER_FILE[FILE_ICON$=".wav"], .EXPLORER_FILE[FILE_ICON$=".WAV"]
 {BACKGROUND-IMAGE: URL("../IMAGES/.WAV.PNG")}
+
+.WINDOW-RESIZE-HANDLE
+{
+	POSITION: ABSOLUTE;
+	WIDTH: 6PX;
+	HEIGHT: 6PX;
+	MARGIN: 1PX;
+	BACKGROUND: #F00;
+	OPACITY: 0;
+	Z-INDEX: 9998;
+}
+
+#WINDOW-TOP-LEFT,
+#WINDOW-TOP-RIGHT,
+#WINDOW-BOTTOM-LEFT,
+#WINDOW-BOTTOM-RIGHT
+{
+	Z-INDEX: 9999;
+}
+
+#WINDOW-TOP-LEFT
+{
+	CURSOR: NW-RESIZE;
+	TOP: 0;
+	LEFT: 0;
+}
+
+#WINDOW-TOP-RIGHT
+{
+	CURSOR: NE-RESIZE;
+	TOP: 0;
+	RIGHT: 0;
+}
+
+#WINDOW-BOTTOM-LEFT
+{
+	CURSOR: SW-RESIZE;
+	BOTTOM: 0;
+	LEFT: 0;
+}
+
+#WINDOW-BOTTOM-RIGHT
+{
+	CURSOR: SE-RESIZE;
+	BOTTOM: 0;
+	RIGHT: 0;
+}
+
+#WINDOW-TOP
+{
+	CURSOR: N-RESIZE;
+	TOP: 0;
+	LEFT: 0;
+}
+
+#WINDOW-BOTTOM
+{
+	CURSOR: S-RESIZE;
+	BOTTOM: 0;
+	LEFT: 0;
+}
+
+#WINDOW-LEFT
+{
+	CURSOR: W-RESIZE;
+	TOP: 0;
+	LEFT: 0;
+}
+
+#WINDOW-RIGHT
+{
+	CURSOR: E-RESIZE;
+	TOP: 0;
+	RIGHT: 0;
+}
