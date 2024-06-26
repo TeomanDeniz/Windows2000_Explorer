@@ -8,7 +8,7 @@
 # +.....................++.....................+ #   :!:: :!:!1:!:!::1:::!!!:  #
 # : C - Maximum Tension :: Create - 2022/11/15 : #   ::!::!!1001010!:!11!!::   #
 # :---------------------::---------------------: #   :!1!!11000000000011!!:    #
-# : License - MIT       :: Update - 2024/06/23 : #    ::::!!!1!!1!!!1!!!::     #
+# : License - MIT       :: Update - 2024/06/26 : #    ::::!!!1!!1!!!1!!!::     #
 # +.....................++.....................+ #       ::::!::!:::!::::      #
 <--**************************************************************************-->
 
@@ -68,12 +68,17 @@
    <DIV CLASS="WINDOW2000-BORDER"
     ONMOUSEDOWN="VBScript:SET_WINDOW_POSITION()"
     ONMOUSEUP="VBScript:WINDOW_STOPPED_MOVING()">
-    <DIV CLASS="WINDOW2000-TITLEBAR">
+    <DIV CLASS="WINDOW2000-TITLEBAR"
+     ONDBLCLICK="javascript:TITLE_BAR_DOUBLE_CLICK()">
      <!--<IMG STYLE="POSITION: ABSOLUTE;" SRC="">-->
      <SPAN ID="APP_TITLE"></SPAN>
      <A CLASS="WINDOW2000-CLOSE-BUTTON" ONCLICK="self.close();"></A>
+     <A CLASS="WINDOW2000-MAXIMIZE-BUTTON" ID="VB_MAXIMIZE_WINDOW"
+      ONCLICK="javascript:MAXIMIZE_WINDOW();" STYLE="DISPLAY: BLOCK;"></A>
+     <A CLASS="WINDOW2000-RESTORE-BUTTON"
+      ONCLICK="javascript:RESTORE_WINDOW();"></A>
      <A CLASS="WINDOW2000-MINIMIZE-BUTTON"
-      ONCLICK="javascript:MINIMALIZE_WINDOW();"></A>
+      ONCLICK="javascript:MINIMIZE_WINDOW();"></A>
     </DIV>
    </DIV>
    <DIV CLASS="WINDOW2000-BORDER" STYLE="HEIGHT: 100%;">
